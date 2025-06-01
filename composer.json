@@ -1,0 +1,29 @@
+{
+    "name": "sadegh19b/laravel-iran-cities",
+    "description": "A Laravel package for Iran provinces and cities seeder and models",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sadegh Barzegar",
+            "email": "sadegh19b@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Sadegh19b\\LaravelIranCities\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sadegh19b\\LaravelIranCities\\LaravelIranCitiesServiceProvider"
+            ]
+        }
+    }
+}
