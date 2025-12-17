@@ -1,6 +1,8 @@
-# Iran Provinces and Cities for Laravel
+# Iran Cities for Laravel
 
-A Laravel package for Iran provinces and cities seeder and models.
+A Laravel package for Iran provinces, counties and cities seeder and models.
+
+This package uses this [repo](https://github.com/sajaddp/list-of-cities-in-Iran) for list of cities (Thanks to [@sajaddp](https://github.com/sajaddp)).
 
 _Supports Laravel 8 to 12._
 
@@ -14,9 +16,9 @@ composer require sadegh19b/laravel-iran-cities
 
 ## Quick Start
 
-1. Generate models, migrations, and seeder:
+1. Publish migrations (optional):
 ```bash
-php artisan iran-cities:generate --all
+php artisan vendor:publish --tag=iran-cities-migrations
 ```
 
 2. Run migrations:
@@ -26,69 +28,29 @@ php artisan migrate
 
 3. Run the seeder:
 ```bash
-php artisan db:seed --class="Database\Seeders\IranProvincesAndCitiesSeeder"
+php artisan db:seed --class="Sadegh19b\LaravelIranCities\Seeders\IranCitiesSeeder"
 ```
 
 4. Use the models:
 ```php
-use App\Models\Province;
-use App\Models\City;
+use Sadegh19b\LaravelIranCities\Models\Province;
+use Sadegh19b\LaravelIranCities\Models\County;
+use Sadegh19b\LaravelIranCities\Models\City;
 
 // Get all provinces
 $provinces = Province::all();
 
+// Get counties of a province
+$province = Province::find(1);
+$counties = $province->counties;
+
 // Get cities of a province
 $province = Province::find(1);
 $cities = $province->cities;
-```
 
-## Generate Stubs
-
-### Generate All
-
-To generate models, migrations, and seeder:
-
-```bash
-php artisan iran-cities:generate --all
-```
-
-### Generate Specific
-
-You can also generate specific files:
-
-```bash
-php artisan iran-cities:generate --models
-php artisan iran-cities:generate --migrations
-php artisan iran-cities:generate --seeder
-```
-
-## Usage
-
-### Get All Provinces or Cities
-
-```php
-use App\Models\Province;
-
-$provinces = Province::all();
-$cities = City::all();
-```
-
-### Get Cities of a Province
-
-```php
-use App\Models\Province;
-
-$province = Province::find(1);
-$cities = $province->cities;
-```
-
-### Get Province of a City
-
-```php
-use App\Models\City;
-
-$city = City::find(1);
-$province = $city->province;
+// Get cities of a county
+$county = County::find(1);
+$cities = $county->cities;
 ```
 
 ## License

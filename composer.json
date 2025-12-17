@@ -22,7 +22,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Sadegh19b\\LaravelIranCities\\LaravelIranCitiesServiceProvider"
+                "Sadegh19b\\LaravelIranCities\\IranCitiesServiceProvider"
             ]
         }
     }

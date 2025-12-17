@@ -1,0 +1,28 @@
+<?php
+
+namespace Sadegh19b\LaravelIranCities;
+
+use Illuminate\Support\ServiceProvider;
+
+class IranCitiesServiceProvider extends ServiceProvider
+{
+    /**
+     * Register services.
+     */
+    public function register(): void
+    {
+        //
+    }
+
+    /**
+     * Bootstrap services.
+     */
+    public function boot(): void
+    {
+        $this->loadMigrationsFrom(__DIR__ . '/migrations');
+
+        $this->publishes([
+            __DIR__ . '/migrations' => database_path('migrations'),
+        ], 'iran-cities-migrations');
+    }
+} 
