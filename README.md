@@ -4,7 +4,7 @@ A Laravel package for Iran provinces, counties and cities seeder and models.
 
 This package uses this [repo](https://github.com/sajaddp/list-of-cities-in-Iran) for list of cities (Thanks to [@sajaddp](https://github.com/sajaddp)).
 
-_Supports Laravel 8 to 12._
+_Supports Laravel 8 to 13._
 
 ## Installation
 
